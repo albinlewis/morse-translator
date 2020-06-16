@@ -1,11 +1,27 @@
-<form class="example-form">
-  <mat-form-field class="example-full-width">
-    <mat-label>Favorite food</mat-label>
-    <input matInput placeholder="Ex. Pizza" value="Sushi">
-  </mat-form-field>
+<div class="container">
+  <div class="row">
+    <mat-toolbar>
+      <span class="title"> {{setTitle()}} </span>
+    </mat-toolbar>
+  </div>
+  <div class="row align-row">
+    <form>
+      <mat-form-field>
+        <mat-label>{{setInputLabel()}}</mat-label>
+        <input matInput  name="textToTranslate" [(ngModel)]="inputText" [placeholder]="isDecoding ?  '..- - ---' : 'Ex. 1 pizza'">
+      </mat-form-field>
+    </form>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <mat-card ><span class="card-content">{{isDecoding ? morseDecode(inputText) : morseCode(inputText)}}</span></mat-card>
+    </div>
+  <div class="d-none d-md-block col-md-6">
+    <mat-slide-toggle class="switch-mode-desktop" (toggleChange)="switchMode()">{{setSwitchText()}}</mat-slide-toggle>
+  </div>
+  </div>
 
-  <mat-form-field class="example-full-width">
-    <mat-label>Leave a comment</mat-label>
-    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-  </mat-form-field>
-</form>
+  <div class="row d-md-none align-row switch-mode-mobile">
+    <mat-slide-toggle (toggleChange)="switchMode()">{{setSwitchText()}}</mat-slide-toggle>
+  </div>
+  </div>

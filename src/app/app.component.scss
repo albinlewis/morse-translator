@@ -1,0 +1,28 @@
+.container {
+  margin-top: 20px;
+  font-family: "Montserrat", sans-serif;
+
+  .row {
+    margin-right: -4px;
+    margin-left: -4px;
+  }
+  .align-row {
+    padding: 16px;
+  }
+  .switch-mode-desktop {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .title {
+    font-size: x-large;
+  }
+
+  .card-content {
+    font-size: xx-large;
+  }
+
+  .switch-mode-mobile {
+    margin-top: 16px;
+  }
+}
